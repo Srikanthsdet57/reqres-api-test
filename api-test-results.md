@@ -6,7 +6,7 @@ https://reqres.in/api/users/2
 
 ---
 
-## 1. Retrieve User Data (GET Request)
+## 1&2. Retrieve User Data (GET Request)
 **Tool used:** curl / Postman
 **Status Code:** 200 OK
 **Response Body:**
@@ -20,16 +20,16 @@ https://reqres.in/api/users/2
   }
 }
 
-## 2. First Name
+## 3. First Name
 Janet
 
-## 3. URL from Response Body
+## 4. URL from Response Body
 https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_content=referral
 
-## 4. Update Email Address (PUT Request)
+## 5. Update Email Address (PUT Request)
 Request body: { "email": "youremail@example.com" }
 Status Code: 200 OK
 
-## 5. Delete Last Name (PATCH Request)
+## 6. Delete Last Name (PATCH Request)
 Request body: { "last_name": "" }
 Status Code: 200 OK
