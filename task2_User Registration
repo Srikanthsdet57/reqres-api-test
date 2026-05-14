@@ -1,0 +1,61 @@
+Here's a complete answer covering all three sections:
+
+---
+
+## 1.1 Test Analysis and Design
+
+**Method for creating test scenarios:**
+
+I'd use a combination of **Equivalence Partitioning** and **Boundary Value Analysis** to systematically cover all input fields.
+
+**Positive scenarios (valid inputs):**
+- Register with all valid data (alphanumeric username, strong password, matching confirm password)
+- Username with minimum/maximum allowed characters
+- First/Last name with hyphens or apostrophes (e.g., O'Brien)
+
+**Negative scenarios (invalid inputs):**
+- Leave required fields blank (one at a time and all together)
+- Username with special characters or spaces
+- Password too short / missing complexity requirements
+- Confirm Password not matching Password
+- Duplicate username already in the system
+- SQL injection or script tags in name fields (security testing)
+- Extremely long strings in all fields (boundary testing)
+
+**Techniques/Tools:**
+- **Equivalence Partitioning** to group valid/invalid inputs
+- **Boundary Value Analysis** for character limits
+- **Exploratory testing** to catch unexpected edge cases
+- Browser DevTools to inspect field validation
+- **Buggy Cars site** (https://buggy.justtestit.org/) directly for manual testing
+
+---
+
+## 1.2 Prioritisation and Strategy
+
+**Priority order:**
+1. **Critical** – Successful registration with valid data (happy path)
+2. **High** – Empty/missing field validation, duplicate username
+3. **Medium** – Password mismatch, weak password rejection
+4. **Low** – Edge cases like special characters, very long inputs
+
+**Testing strategy:**
+- Start with **smoke testing** (happy path works end-to-end)
+- Follow with **negative testing** for each field individually
+- Use **regression testing** if any bugs are fixed
+
+**Frameworks/Tools:**
+- **Selenium WebDriver** or **Playwright** for automation
+- **TestNG/JUnit** for test management
+- **Jira** or similar for bug reporting
+- **Postman** if the registration has an underlying API
+
+---
+
+## 1.3 Client Collaboration
+
+- Begin with a **kickoff meeting** to clarify acceptance criteria — e.g., what are the exact password rules? Is username case-sensitive?
+- If requirements are unclear (e.g., allowed special characters in username), I'd raise a query via the agreed channel (Slack/email/Jira comment) rather than assuming
+- Share a **test plan document** with the client before execution for sign-off
+- Provide **regular status updates** during testing and a **bug report** with screenshots/steps to reproduce after
+- After fixes, loop the client in for **UAT (User Acceptance Testing)** confirmation before sign-off.
